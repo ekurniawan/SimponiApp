@@ -35,5 +35,10 @@ namespace SimponiApp.Views
             }
             
         }
+
+        private void MenuAbout_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AboutPage());
+        }
     }
 }

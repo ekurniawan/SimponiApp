@@ -2,6 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimponiApp.Views.LowonganPage" Title="Lowongan">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="menuAbout" Text="About Page" Order="Secondary" Clicked="MenuAbout_Clicked" />
+    
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="lvLowongan">
