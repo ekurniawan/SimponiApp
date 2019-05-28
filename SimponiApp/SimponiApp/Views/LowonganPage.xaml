@@ -4,7 +4,7 @@
              x:Class="SimponiApp.Views.LowonganPage" Title="Lowongan">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="menuAbout" Text="About Page" Order="Secondary" Clicked="MenuAbout_Clicked" />
-    
+        <ToolbarItem x:Name="menuiconAbout" Text="About" Order="Primary" Icon="icon_user.png" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
