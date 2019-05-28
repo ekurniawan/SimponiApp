@@ -9,7 +9,7 @@ namespace SimponiApp
         public App()
         {
             InitializeComponent();
-
+            //init
             MainPage = new MainPage();
         }
 
