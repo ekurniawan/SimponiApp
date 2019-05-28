@@ -11,7 +11,7 @@ namespace SimponiApp
         {
             InitializeComponent();
             //init
-            MainPage = new NavigationPage(new LowonganPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

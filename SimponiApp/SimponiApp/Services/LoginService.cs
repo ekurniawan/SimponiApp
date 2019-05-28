@@ -1,29 +1,27 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SimponiApp.Helpers;
 using SimponiApp.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SimponiApp.Services
 {
-    public class LowonganService
+    public class LoginService
     {
         private HttpClient _client;
-        public List<Lowongan> ListLowongan { get; set; }
-        public LowonganService()
+        public LoginService()
         {
             _client = new HttpClient();
             _client.MaxResponseContentBufferSize = 256000;
         }
-        public async Task<List<Lowongan>> GetAllData()
+
+        public async Task<Alumni> GetLogin(string username,string password)
         {
-            ListLowongan data = null;
-            var uri = new Uri($"{Helpers.Pengaturan.BaseUrl}/lowongan");
+            WrapperAlumni wrapper = null;
+            var uri = new Uri($"{Helpers.Pengaturan.BaseUrl}/alumni/{username}?pwd={password}");
             try
             {
                 var response = await _client.GetAsync(uri);
@@ -33,9 +31,9 @@ namespace SimponiApp.Services
                     var cleaning = JsonConvert.DeserializeObject(content);
                     JObject json = JObject.Parse(cleaning.ToString());
 
-                    data = JsonConvert.DeserializeObject<ListLowongan>(json.ToString());
+                    wrapper = JsonConvert.DeserializeObject<WrapperAlumni>(json.ToString());
                 }
-                return data.CONTENT;
+                return wrapper.CONTENT;
             }
             catch (Exception ex)
             {

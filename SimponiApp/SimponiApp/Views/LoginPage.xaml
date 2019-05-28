@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimponiApp.Views.LoginPage" Title="Login Page">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image Source="back4.jpg" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}" Aspect="AspectFill"/>
+
+            <Grid RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.1*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="1.2*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image Source="logo.png"/>
+                </StackLayout>
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="entryUsernameAlumni" TextColor="White" BackgroundColor="Transparent" Placeholder="Username" PlaceholderColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Entry Grid.Row="5" Grid.Column="1" x:Name="entryPasswordAlumni" TextColor="White" BackgroundColor="Transparent" IsPassword="true" Placeholder="Password" PlaceholderColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Button x:Name="btnLogin" Clicked="BtnLogin_Clicked" BorderRadius="30" Grid.Row="7" Grid.Column="1" FontSize="20" Text="Masuk"  BackgroundColor="White" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="0.5" />
+                <StackLayout Grid.Row="8" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Sudah Mendaftar?" FontSize="16" FontFamily="GillSans" HorizontalOptions="Center" TextColor="White"/>
+                    <Label x:Name="lblDaftarAlumni" TextColor="White" Grid.Row="11" Grid.Column="1" Text="Daftar Disini" HorizontalOptions="Center" FontFamily="GillSans-SemiBold" />
+                </StackLayout>
+            </Grid>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
