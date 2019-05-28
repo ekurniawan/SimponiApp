@@ -16,16 +16,9 @@ namespace SimponiApp.Views
         public MenuTabbedPage()
         {
             InitializeComponent();
-            btnHal1.Clicked += BtnHal1_Clicked;
+           
         }
 
-        private async void BtnHal1_Clicked(object sender, EventArgs e)
-        {
-            if (Application.Current.Properties["alumni"] != null)
-            {
-                var data = Application.Current.Properties["alumni"];
-                await DisplayAlert("Keterangan", $"Nama: {data}", "OK");
-            }
-        }
+       
     }
 }
