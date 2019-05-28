@@ -1,4 +1,5 @@
-﻿using SimponiApp.Services;
+﻿using SimponiApp.Models;
+using SimponiApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,16 @@ namespace SimponiApp.Views
         {
             InitializeComponent();
             _myService = new LoginService();
+            
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (Application.Current.Properties.ContainsKey("alumni"))
+            {
+                await Navigation.PushAsync(new MenuTabbedPage());
+            }
         }
 
         private async void BtnLogin_Clicked(object sender, EventArgs e)
@@ -28,8 +39,9 @@ namespace SimponiApp.Views
                     entryPasswordAlumni.Text);
                 if (data != null)
                 {
-                    Application.Current.Properties["alumni"] = data;
-                    await Navigation.PushAsync(new LowonganPage());
+                    Application.Current.Properties["alumni"] = data.NAMA_MHS;
+                    await Application.Current.SavePropertiesAsync();
+                    await Navigation.PushAsync(new MenuTabbedPage());
                 }
                 else
                 {
@@ -39,6 +51,19 @@ namespace SimponiApp.Views
             catch (Exception ex)
             {
                 await DisplayAlert("Keterangan", ex.Message, "OK");
+            }
+        }
+
+        private async void BtnCekSession_Clicked(object sender, EventArgs e)
+        {
+            if (Application.Current.Properties.ContainsKey("alumni"))
+            {
+                var data = Application.Current.Properties["alumni"];
+                await DisplayAlert("Keterangan", $"Nama {data}", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Keterangan", "Tidak Ditemukan", "OK");
             }
         }
     }

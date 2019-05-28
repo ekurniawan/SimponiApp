@@ -40,6 +40,7 @@
                 <StackLayout Grid.Row="8" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Label Text="Sudah Mendaftar?" FontSize="16" FontFamily="GillSans" HorizontalOptions="Center" TextColor="White"/>
                     <Label x:Name="lblDaftarAlumni" TextColor="White" Grid.Row="11" Grid.Column="1" Text="Daftar Disini" HorizontalOptions="Center" FontFamily="GillSans-SemiBold" />
+                    <Button x:Name="btnCekSession" Text="Cek Session" Clicked="BtnCekSession_Clicked" />
                 </StackLayout>
             </Grid>
         </RelativeLayout>
