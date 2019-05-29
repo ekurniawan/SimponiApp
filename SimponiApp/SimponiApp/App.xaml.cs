@@ -10,10 +10,11 @@ namespace SimponiApp
         public App()
         {
             InitializeComponent();
-            
+
             //Application.Current.Properties["alumni"] = null;
             //init
-            MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new NavigationPage(new LoginPage());
+            MainPage = new SimponiMasterDetailPage();
         }
 
         protected override void OnStart()
