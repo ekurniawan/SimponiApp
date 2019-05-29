@@ -59,7 +59,7 @@ namespace SimponiApp.Services
 
         public async Task<SimpanTracerAlumni> Insert(TambahTracerAlumni tambahtracer)
         {
-            var uri = new Uri($"{Helpers.Pengaturan.BaseUrl}/add");
+            var uri = new Uri($"{Helpers.Pengaturan.BaseUrl}/tracerstudyalumni/add");
             try
             {
                 var json = JsonConvert.SerializeObject(tambahtracer);
@@ -70,7 +70,7 @@ namespace SimponiApp.Services
                     throw new Exception("Tambah data gagal !"); 
                 }else
                 {
-                    var dataresponse = response.Content.ReadAsStringAsync();
+                    var dataresponse = await response.Content.ReadAsStringAsync();
                     var result = JsonConvert.DeserializeObject<SimpanTracerAlumni>(dataresponse.ToString());
                     return result;
                 }
