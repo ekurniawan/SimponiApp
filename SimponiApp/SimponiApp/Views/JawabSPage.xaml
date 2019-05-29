@@ -13,7 +13,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnSubmit" Text="Submit" />
+                <Button x:Name="btnSubmit" IsEnabled="False" Text="Submit" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

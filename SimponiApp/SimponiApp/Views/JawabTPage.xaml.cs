@@ -36,7 +36,7 @@ namespace SimponiApp.Views
                     ID_PERTANYAAN = _tracerAlumni.ID_PERTANYAAN,
                     ID_SURVEY = _tracerAlumni.ID_SURVEY,
                     USERNAME = Application.Current.Properties["alumni"].ToString(),
-                    INSERT_DATE = "2019-05-22",
+                    INSERT_DATE = DateTime.Now.ToShortDateString(),
                     JAWABAN = edJawaban.Text,
                     IP_ADDRESS=""
                 };
