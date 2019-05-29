@@ -36,5 +36,28 @@ namespace SimponiApp.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<List<JawabanTracerAlumni>> GetPertanyaan(string idpertanyaan)
+        {
+            ListJawabanTracerAlumni data = null;
+            var uri = new Uri($"{Helpers.Pengaturan.BaseUrl}/tracerstudyalumni?id_pertanyaan={idpertanyaan}");
+            try
+            {
+                var response = await _client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    data = JsonConvert.DeserializeObject<ListJawabanTracerAlumni>(content);
+                }
+                return data.CONTENT;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
+
+
 }
+

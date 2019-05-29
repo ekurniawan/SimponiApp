@@ -6,6 +6,7 @@
             Title="Dashboard">
   <!--Pages can be added as references or inline-->
     <TabbedPage.Children>
-        <local:LowonganPage Title="Lowongan"  />
+        <local:LowonganPage Title="Lowongan" />
+        <local:TracerStudyPage Title="Tracer Study" />
     </TabbedPage.Children>
 </TabbedPage>
