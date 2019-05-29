@@ -40,6 +40,7 @@ namespace SimponiApp.Views
                 if (data != null)
                 {
                     Application.Current.Properties["alumni"] = data.NAMA_MHS;
+                    Application.Current.Properties["idalumni"] = data.ID_ALUMNI;
                     await Application.Current.SavePropertiesAsync();
                     await Navigation.PushAsync(new MenuTabbedPage());
                 }
