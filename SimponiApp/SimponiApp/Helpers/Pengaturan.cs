@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SimponiApp.Helpers
 {
+    //
     public class Pengaturan
     {
         public static string BaseUrl = 
