@@ -15,6 +15,7 @@ namespace SimponiApp.Views
     {
         private TracerAlumni _tracerAlumni;
         public List<JawabanTracerAlumni> JawabTracerAlumni { get; set; }
+        private string pilihan;
         public JawabSPage(TracerAlumni traceralumni)
         {
             InitializeComponent();
