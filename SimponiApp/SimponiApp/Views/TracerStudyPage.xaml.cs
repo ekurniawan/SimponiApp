@@ -30,7 +30,10 @@ namespace SimponiApp.Views
                 JawabTPage jawabTPage = new JawabTPage(item);
                 await Navigation.PushAsync(jawabTPage);
             }else {
-
+                JawabSPage jawabSPage = new JawabSPage(item);
+                var pilihan = await _myService.GetPertanyaan(item.ID_PERTANYAAN);
+                jawabSPage.JawabTracerAlumni = pilihan;
+                await Navigation.PushAsync(jawabSPage);
             }
 
             /*await DisplayAlert(
