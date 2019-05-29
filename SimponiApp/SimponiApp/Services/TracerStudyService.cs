@@ -56,6 +56,31 @@ namespace SimponiApp.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<SimpanTracerAlumni> Insert(TambahTracerAlumni tambahtracer)
+        {
+            var uri = new Uri($"{Helpers.Pengaturan.BaseUrl}/add");
+            try
+            {
+                var json = JsonConvert.SerializeObject(tambahtracer);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = null;
+                response = await _client.PostAsync(uri,content);
+                if (!response.IsSuccessStatusCode) {
+                    throw new Exception("Tambah data gagal !"); 
+                }else
+                {
+                    var dataresponse = response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<SimpanTracerAlumni>(dataresponse.ToString());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
     }
 
 

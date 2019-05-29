@@ -39,7 +39,7 @@ namespace SimponiApp.Views
                     entryPasswordAlumni.Text);
                 if (data != null)
                 {
-                    Application.Current.Properties["alumni"] = data.NAMA_MHS;
+                    Application.Current.Properties["alumni"] = data.NPM;
                     Application.Current.Properties["idalumni"] = data.ID_ALUMNI;
                     await Application.Current.SavePropertiesAsync();
                     await Navigation.PushAsync(new MenuTabbedPage());

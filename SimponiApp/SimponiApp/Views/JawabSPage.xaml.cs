@@ -15,12 +15,19 @@ namespace SimponiApp.Views
     {
         private TracerAlumni _tracerAlumni;
         public List<JawabanTracerAlumni> JawabTracerAlumni { get; set; }
-        private string pilihan;
+        private string _pilihan = "";
         public JawabSPage(TracerAlumni traceralumni)
         {
             InitializeComponent();
             _tracerAlumni = traceralumni;
             lblPertanyaan.Text = traceralumni.PERTANYAAN;
+            lvJawaban.ItemSelected += LvJawaban_ItemSelected;
+        }
+
+        private void LvJawaban_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            JawabanTracerAlumni pilihan = (JawabanTracerAlumni)e.SelectedItem;
+            _pilihan = pilihan.PILIHAN;
         }
 
         public JawabSPage()
