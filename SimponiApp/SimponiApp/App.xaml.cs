@@ -14,7 +14,7 @@ namespace SimponiApp
             //Application.Current.Properties["alumni"] = null;
             //init
             //MainPage = new NavigationPage(new LoginPage());
-            MainPage = new SimponiMasterDetailPage();
+            MainPage = new NavigationPage(new RestaurantPage());
         }
 
         protected override void OnStart()
