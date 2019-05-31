@@ -20,6 +20,28 @@ namespace SimponiApp.Views
             InitializeComponent();
             _myService = new RestaurantServices();
             btnEdit.Clicked += BtnEdit_Clicked;
+            btnDelete.Clicked += BtnDelete_Clicked;
+        }
+
+        private async void BtnDelete_Clicked(object sender, EventArgs e)
+        {
+            if(await DisplayAlert("Keterangan","Apakah anda yakin delete data?", "Yes", "No") == true)
+            {
+                try
+                {
+                    var result = await _myService.Delete(txtID.Text);
+                    if (result)
+                    {
+                        await DisplayAlert("Keterangan", "Data berhasil didelete", "OK");
+                        await Navigation.PopAsync();
+                    }
+                        
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Keterangan", ex.Message, "OK");
+                }
+            }
         }
 
         private async void BtnEdit_Clicked(object sender, EventArgs e)
