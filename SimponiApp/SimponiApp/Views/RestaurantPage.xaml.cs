@@ -20,6 +20,7 @@ namespace SimponiApp.Views
             InitializeComponent();
             _myService = new RestaurantServices();
             lvRestaurant.ItemSelected += LvRestaurant_ItemSelected;
+           
         }
 
         private async void LvRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)
