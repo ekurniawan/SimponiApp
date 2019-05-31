@@ -58,5 +58,22 @@ namespace SimponiApp.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<bool> Delete(string id)
+        {
+            var uri = new Uri($"http://168.63.236.219/api/Restaurant/{id}");
+            try
+            {
+                var response = await _client.DeleteAsync(uri);
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
