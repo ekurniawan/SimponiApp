@@ -1,4 +1,5 @@
-﻿using SimponiApp.Services;
+﻿using SimponiApp.Models;
+using SimponiApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,15 @@ namespace SimponiApp.Views
         {
             InitializeComponent();
             _myService = new RestaurantServices();
+            lvRestaurant.ItemSelected += LvRestaurant_ItemSelected;
+        }
+
+        private async void LvRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = (Restaurant)e.SelectedItem;
+            DetailRestaurant detailResto = new DetailRestaurant();
+            detailResto.BindingContext = item;
+            await Navigation.PushAsync(detailResto);
         }
 
         protected async override void OnAppearing()
