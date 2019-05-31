@@ -9,7 +9,7 @@
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:SimponiMasterDetailPageMasterMaster />
+          <pages:SimponiMasterDetailPageDetailDetail />
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

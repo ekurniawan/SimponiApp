@@ -33,8 +33,10 @@ namespace SimponiApp.Views
             {
                 MenuItems = new ObservableCollection<SimponiMasterDetailPageMenuItemMenuItem>(new[]
                 {
-                    new SimponiMasterDetailPageMenuItemMenuItem { Id = 0, Title = "Page 1" },
-                    new SimponiMasterDetailPageMenuItemMenuItem { Id = 1, Title = "Page 2" },
+                    new SimponiMasterDetailPageMenuItemMenuItem { Id = 0, Title = "Lowongan",
+                        TargetType = typeof(LowonganPage) },
+                    new SimponiMasterDetailPageMenuItemMenuItem { Id = 1, Title = "Tracer Study",
+                        TargetType= typeof(TracerStudyPage)},
                     new SimponiMasterDetailPageMenuItemMenuItem { Id = 2, Title = "Page 3" },
                     new SimponiMasterDetailPageMenuItemMenuItem { Id = 3, Title = "Page 4" },
                     new SimponiMasterDetailPageMenuItemMenuItem { Id = 4, Title = "Page 5" },
